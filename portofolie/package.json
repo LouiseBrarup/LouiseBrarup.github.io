@@ -1,0 +1,12 @@
+{
+  "name": "portofolie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "brarup": "sass scss:css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

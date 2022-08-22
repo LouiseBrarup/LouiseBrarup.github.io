@@ -1,0 +1,70 @@
+.navbar{
+    position: relative;
+    z-index: 999;
+    
+    &-logo:hover{
+        transform: rotateZ(450deg);
+    }
+
+    &-logo{
+        height: 7rem;
+        margin: 3rem;
+        padding: .5rem;
+        position: absolute;
+        right: 0;
+        background-color: transparentize(color(tertiary), .3);
+        border-radius: 50%;
+        z-index: 200;
+        position: fixed;
+        cursor: pointer;
+        transition: all 3s;
+
+        @include resp(xs){
+            height: 5rem;
+        }
+
+    }
+
+    &-navigation{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparentize(color(primary), .1);
+        position: fixed;
+        right: -100vw;
+        transition: right .8s cubic-bezier(1,0,0,1);
+
+        
+        
+        &-list{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+            &-item:hover{
+                letter-spacing: 4px;
+            }
+            &-item{
+                list-style: none;
+                @include text($sz: size(lg));
+                text-transform: uppercase;
+                transition: all 2ms;
+            }
+            
+            &-link{
+                color: color(tertiary);
+                text-decoration: none;
+                display: block;
+                margin: 20px;
+                transition: all .5s;
+            }
+        }
+    }
+}
+
+
+.checkbox:checked ~ .navbar-navigation{
+    right: 0;
+}
